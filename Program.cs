@@ -9,6 +9,7 @@ namespace threads
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("just adding a line so file is modified");            
+            Console.WriteLine("Git ssh test");
         }
     }
 }
