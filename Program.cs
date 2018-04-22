@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace threads
@@ -11,10 +14,14 @@ namespace threads
             // Console.WriteLine("just adding a line so file is modified");            
             // Console.WriteLine("Git ssh test");
 
-            Enumerators enums = new Enumerators();
-            foreach(int i in enums.GetEnumerator()){
-               Console.WriteLine(i);
-           }            
-        }
+            Enumerators.EnumerateFibonacci().Take(5);
+            var sequence = Enumerators.GetEnumerator().GetEnumerator();        
+            
+            while(sequence.MoveNext())
+            {
+                Console.WriteLine(sequence.Current);                          
+           }                      
+
+        }   
     }
 }
